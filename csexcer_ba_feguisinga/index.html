@@ -12,7 +12,12 @@
         var y="Randomly generated number: ";
         var x= y.concat(" ", num);
         document.getElementById("outnum").innerHTML=x;
-        
+        var hundreds = num.charAt(0);
+        var tens = num.charAt(1);
+        var ones = num.charAt(2);
+        var b="Breakdown: ";
+        var out1= b.concat(hundreds, "00, ", tens, "0, ", ones);
+        document.getElementById("outnum").innerHTML=out1;
     </script>
 </body>
 </html>
