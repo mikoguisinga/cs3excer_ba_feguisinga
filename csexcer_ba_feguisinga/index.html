@@ -7,17 +7,20 @@
 </head>
 <body>
     <h1 id="outnum"></h1>
+    <h1 id="br"></h1>
+    <h1 id="dt"></h1>
     <script>
         var num= Math.floor(Math.random()*1000);
         var y="Randomly generated number: ";
         var x= y.concat(" ", num);
         document.getElementById("outnum").innerHTML=x;
-        var hundreds = num.charAt(0);
-        var tens = num.charAt(1);
-        var ones = num.charAt(2);
-        var b="Breakdown: ";
-        var out1= b.concat(hundreds, "00, ", tens, "0, ", ones);
-        document.getElementById("outnum").innerHTML=out1;
+        var hundreds = Math.floor((num/100)%100);
+        var hundreds1 = Math.floor(hundreds*100);
+        var tens = Math.floor((num/10)%10);
+        var tens1 = Math.floor(tens*10);
+        var ones = num%10;
+        document.getElementById("br").innerText="Breakdown: "+hundreds1+", "+tens1+", "+ ones;
+        document.getElementById("dt").innerText="Date: "+new Date();
     </script>
 </body>
 </html>
